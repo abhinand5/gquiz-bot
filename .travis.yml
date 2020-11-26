@@ -1,0 +1,20 @@
+# TRAVIS CI Script
+os: windows
+language: shell
+before_install:
+  - choco install python --version=3.7
+  - python -m pip install --upgrade pip
+env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+install:
+  - pip install -r requirements.txt
+before_deploy:
+  - pyinstaller --onefile gquiz-bot.spec
+deploy:
+  provider: releases
+  api_key: $RELEASE_TOKEN
+  file_glob: true
+  file: dist/*.exe
+  skip_cleanup: false
+  draft: false
+  on:
+    tags: true
