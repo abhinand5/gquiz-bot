@@ -17,7 +17,6 @@ Here is when you can use it,
 ![Demo GIF](demo/demo.gif)
 
 
-
 ## Usage
 
 #### Prerequisites: 

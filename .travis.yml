@@ -14,7 +14,7 @@ deploy:
   api_key: $RELEASE_TOKEN
   file_glob: true
   file: dist/*.exe
-  skip_cleanup: false
+  skip_cleanup: true
   draft: false
   on:
     tags: true
