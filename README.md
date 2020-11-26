@@ -37,7 +37,7 @@ The google chrome web driver can be obtained from this link - https://chromedriv
 
 >  Before you go ahead and install the web driver, make sure to select the correct driver version compatible with you Chrome version from the downloads page. You can check chrome version by pasting this - `chrome://version/` in the top bar. According to your Chrome version download the exact same driver from the above link. 
 
-If you are using the binaries from the releases page, you may only need to setup the driver. 
+**If you are using the binaries from the releases page, you may only need to setup the driver.** 
 
 
 
