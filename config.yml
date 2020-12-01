@@ -9,7 +9,17 @@ driver_path: C:\Program Files (x86)\chromedriver.exe
 user_profile: C:\Users\abhin\AppData\Local\Google\Chrome\User Data\Profile 2
 
 # "form_url"    -->  Google form you are interested in filling
-form_url: https://forms.gle/LpUr7S5s3tW9F63G6
+form_url: https://forms.gle/V6ukvQXZGuqhT5kaA
 
 # "filled_form" -->  Pre-filled google form with answers
 filled_form: https://docs.google.com/forms/d/e/1FAIpQLScUsrx-rpXax6Hp_IK1gcIkzg8-6K9zE8ul14x_u22QJXww9A/viewscore?viewscore=AE0zAgBcn5wrIIbk8RmSGjHD3-k0NkScYJfsbA7mPF2V-6xmn91D5FSxwlPtclTdXe5lMHk
+
+# List of questions to be ignored
+ignore_list: 
+  - "name"
+  - "class"
+  - "section"
+  - "reg no"
+  - "reg. no"
+  - "roll no"
+  - "year"

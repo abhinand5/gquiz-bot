@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def extract_answer_key(driver, filled_form):
+def extract_answer_key(driver, filled_form, *args, **kwargs):
     """Function to automatically open the web browser to read and store the question-answer pairs in memory
 
     Args:
@@ -34,12 +34,17 @@ def extract_answer_key(driver, filled_form):
         
         questions_container = driver.find_elements_by_class_name("freebirdFormviewerViewNumberedItemContainer")
 
+        ignore_list = kwargs.get('ignore_list')
+
         question_list = []
         answers_list = []
 
         for question in questions_container:
             q = question.find_element_by_class_name("freebirdFormviewerViewItemsItemItemTitle")
             # print(q.text)
+            if q.text.lower().strip().replace(' *', '') in ignore_list:
+                continue
+
             question_list.append(q.text)
 
             is_correct = question.find_element_by_class_name("freebirdFormviewerViewItemsItemCorrectnessIcon").get_attribute("aria-label")
@@ -73,6 +78,7 @@ def fill_answers(driver, form, *args, **kwargs):
     Raises:
         Exception: Errors will be logged on the console
     """
+    ignore_list = kwargs.get('ignore_list')
 
     driver.execute_script("window.open('');")
     driver.switch_to.window(driver.window_handles[1])
@@ -86,8 +92,11 @@ def fill_answers(driver, form, *args, **kwargs):
         for question in question_container:
             q = question.find_element_by_class_name("freebirdFormviewerComponentsQuestionBaseTitle").text
             
-            if q not in question_list:
-                raise Exception("Question not found in answer key")
+            if q.lower().strip().replace(' *', '') in ignore_list:
+                continue
+
+            if q not in question_list and q.lower().strip().replace(' *', '') not in ignore_list:
+                raise Exception(f"{q} Question not found in answer key")
 
             answer = answer_key[q]
 

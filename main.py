@@ -13,6 +13,8 @@ DRIVER_PATH = cfg['driver_path']
 FORM = cfg['form_url']
 # Prefilled form with answers
 FILLED_FORM = cfg['filled_form']
+# List of questions to ignore
+IGNORE_LIST = cfg['ignore_list'] 
 
 # Load Google Chrome User Profile details
 user_profile = cfg['user_profile']
@@ -32,7 +34,7 @@ if __name__ == "__main__":
     )
 
     # Extracts the answers from prefilled form - view ./gquiz_bot.py for code
-    question_list, answer_key = extract_answer_key(driver, FILLED_FORM)
-
+    question_list, answer_key = extract_answer_key(driver, FILLED_FORM, ignore_list=IGNORE_LIST)
+    
     # Opens the browser and fills the form with extracted answers - view ./gquiz_bot.py for code
-    fill_answers(driver, FORM, question_list, answer_key)
+    fill_answers(driver, FORM, question_list, answer_key, ignore_list=IGNORE_LIST)
