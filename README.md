@@ -45,6 +45,8 @@ The google chrome web driver can be obtained from this link - https://chromedriv
 
 This step has to be followed no matter you're using source code or the binaries. The fields in the `yaml` file are pretty straight forward, just as what the comment lines say. 
 
+>  Note: Ignore List can be used to ignore certain questions that need to be filled by the user manually. You should edit the ignore list to rightly ignore these form fields otherwise you may run into an error.
+
 ```yml
 # "driver_path" -->  Web Browser's driver path  
 driver_path: C:\Program Files (x86)\chromedriver.exe
@@ -57,6 +59,16 @@ form_url: https://forms.gle/LpUr7S5s3tW9F63G6
 
 # "filled_form" -->  Pre-filled google form with answers
 filled_form: https://docs.google.com/forms/d/e/1FAIpQLScUsrx-rpXax6Hp_IK1gcIkzg8-6K9zE8ul14x_u22QJXww9A/viewscore?viewscore=AE0zAgBcn5wrIIbk8RmSGjHD3-k0NkScYJfsbA7mPF2V-6xmn91D5FSxwlPtclTdXe5lMHk
+
+# List of questions to be ignored
+ignore_list: 
+  - "name"
+  - "class"
+  - "section"
+  - "reg no"
+  - "reg. no"
+  - "roll no"
+  - "year"
 ```
 
 
@@ -78,6 +90,8 @@ However if you're using the binaries in the releases page, you want to run the `
 ```
 
 Setting up the `config.yml` file is mandatory in any case. 
+
+> Note: While running the bot if the prefilled form score is below 80% the bot will ask if you want it to proceed in the console. Only if you respond `y` it will proceed.
 
 
 
