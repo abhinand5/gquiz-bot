@@ -6,7 +6,7 @@
 driver_path: C:\Program Files (x86)\chromedriver.exe
 
 # "user_profile" --> Path to Google Chrome user profile data [chrome://version/]
-user_profile: C:\Users\abhin\AppData\Local\Google\Chrome\User Data\Profile 2
+user_profile: C:\Users\abhin\AppData\Local\Google\Chrome\User Data\Default
 
 # "form_url"    -->  Google form you are interested in filling
 form_url: https://forms.gle/V6ukvQXZGuqhT5kaA
