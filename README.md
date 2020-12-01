@@ -10,12 +10,12 @@ Here is when you can use it,
 
 - You want to transfer the answers, and auto-correct wrong answers based on the form's expected output (if that is enabled in the form)
 
-  
+
+> **Leave a star ⭐ if you find it useful.** 
 
 ## Quick Demo
 
 ![Demo GIF](demo/demo.gif)
-
 
 ## Usage
 
